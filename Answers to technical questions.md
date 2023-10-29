@@ -7,13 +7,11 @@ R: Foi o routing onde permitiu fazer o rastreio das páginas.
 const routes: Routes = [
   path: '', 
     children: [
-  { path: 'home', component: HomeComponent, canActivate:[AuthorizatedGuard] },
+  { path: 'home', component: HomeComponent},
   { path: 'restaurants', component: RestaurantListComponent },
   { path: 'restaurants/:id', component: RestaurantDetailsComponent },
   { path: '', redirectTo: '/restaurants', pathMatch: 'full' },
     ],
-
-    canActivate: [AuthorizatedGuard],
 ];
 
 How would you track down a performance issue in production? Have you ever had to do this?
