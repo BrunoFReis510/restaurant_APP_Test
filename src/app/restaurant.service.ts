@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class RestaurantService {
-  private apiUrl = 'https://uk-partnerapi.just-eat.io/orders/abcd1234';
-  private apiKey = 'abcd123456789'; 
+  private apiUrl = 'http://localhost:4200/api/';
+  private apiKey = 'JE-API-KEY abcd123456789';
 
 
   constructor(private http: HttpClient) {}
@@ -21,7 +21,7 @@ export class RestaurantService {
   }
   
   getRestaurants(postcode: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/?postcode=${postcode}`);
+    return this.http.get(`${this.apiUrl}/restaurants/bypostcode/${postcode}`);
   }
 
   getRestaurantDetails(id: number): Observable<any> {

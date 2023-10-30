@@ -1,8 +1,13 @@
 <!-- restaurant-list.component.html -->
+<div><h1>Search restaurant postcode</h1>
+  <input [(ngModel)]="postalCode" placeholder="PostalCode">
+  <button (click)="handleSearch()">Search</button>
+
+</div>
 <div class="card" *ngFor="let restaurant of restaurants">
     <h2>{{ restaurant.name }}</h2>
     <p class="mb-0">Rating: {{ restaurant.rating }}</p>
-    <p class="mb-0">Types of Food: {{ restaurant.foodTypes.join(', ') }}</p>
+    <p class="mb-0">Types of Food: {{ restaurant.cuisineTypes}}</p> 
     <a routerLink="/home">Ir para a Página Inicial</a>
 
   </div>
